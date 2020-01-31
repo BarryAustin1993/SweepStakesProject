@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class Simulation
+    public class Simulation
     {
+
+        //Member Variables (HAS A)
+
+        //Constructor
+        public Simulation()
+        {
+
+        }
+
+        //Member Methods (CAN DO)
+
+        public void RunSimulation()
+        {
+            CreateMarketingFirmWithManager();
+        }
+        void CreateMarketingFirmWithManager()
+        {
+            MarketingFirm Mf = new MarketingFirm();
+
+        }
     }
 }

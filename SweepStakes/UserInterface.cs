@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class UserInterface
+    public static class UserInterface
     {
+
+        //Member Variables (HAS A)
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+        static Array[] GetContestantInformation()
+        {
+
+            return 
+        }
+
     }
 }
