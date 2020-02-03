@@ -10,7 +10,7 @@ namespace SweepStakes
     {
 
         //Member Variables (HAS A)
-
+        
         //Constructor
         public Simulation()
         {
@@ -25,7 +25,23 @@ namespace SweepStakes
         }
         void CreateMarketingFirmWithManager()
         {
-            MarketingFirm Mf = new MarketingFirm();
+            ISweepStakesManaager manager;
+            switch (UserInterface.GetUserInput("Choose Your Manager: Stack or Queue.").ToLower())
+            {
+                case "stack":
+                    manager = new SweepStakesStackManager();
+                    MarketingFirm Mf = new MarketingFirm(manager);
+                    break;
+                case "queue":
+                    manager = new SweepStakesQueueManager();
+                    Mf = new MarketingFirm(manager);
+                    break;
+                default:
+                    CreateMarketingFirmWithManager();
+                    break;
+            }
+
+            
 
         }
     }

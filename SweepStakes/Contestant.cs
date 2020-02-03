@@ -22,10 +22,8 @@ namespace SweepStakes
         }
 
         //Member Methods (CAN DO)
-        void AssignRegistrationNumber()
-        {
 
-        }
+            
 
     }
 }

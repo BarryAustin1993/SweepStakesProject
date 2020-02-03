@@ -8,7 +8,6 @@ namespace SweepStakes
 {
     public static class UserInterface
     {
-
         //Member Variables (HAS A)
        
         //Constructor
@@ -27,7 +26,11 @@ namespace SweepStakes
             int randInteger = random.Next(min, max);
             return randInteger;
         }
-
-
+        public static string GetUserInput(string statement)
+        {
+            Console.WriteLine(statement);
+            string userInput = Console.ReadLine();
+            return userInput;
+        }
     }
 }

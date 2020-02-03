@@ -6,43 +6,52 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class SweepStakes
+    public class SweepStakes
     {
 
         //Member Variables (HAS A)
         Dictionary<int, Contestant> contestants;
         string sweepStakesName;
         int registrationNumber = 0;
-        int winner;
-
-        string SweepStakesName
+        Contestant winner;
+        public string SweepStakesName
         {
             get
             {
-               return sweepStakesName;
+                return sweepStakesName;
             }
         }
         //Constructor
-        SweepStakes()
+        public SweepStakes()
         {
 
         }
         //Member Methods (CAN DO)
 
-        void registerContestant(Contestant contestant)
+        public void NameThisSweepStakes(string name)
+        {
+            sweepStakesName = name;
+        }
+        public void registerContestant(Contestant contestant)
         {
             registrationNumber++;
             contestant.registrationNumber = this.registrationNumber;
             contestants.Add(registrationNumber, contestant);
         }
-        void ChooseTheWinningContestant()
+        public Contestant ChooseTheWinningContestant()
         {
-           Random random = new Random();
-           winner = UserInterface.GetRandomInteger(0, registrationNumber + 1, random);
+            Random random = new Random();
+            int key = UserInterface.GetRandomInteger(0, registrationNumber + 1, random);
+            contestants.TryGetValue(key, out winner);
+            return winner;
         }
-        void PrintContestantInfo()
+        public void PrintContestantInfo(Contestant constestant)
         {
-
+            Console.WriteLine($"{constestant.firstName}\n" +
+                $"{constestant.lastName}\n" +
+                $"{constestant.emailAddress}\n" +
+                $"{constestant.registrationNumber}");
+            Console.ReadLine();
         }
     }
 }
