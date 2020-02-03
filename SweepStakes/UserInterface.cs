@@ -10,15 +10,24 @@ namespace SweepStakes
     {
 
         //Member Variables (HAS A)
-
+       
         //Constructor
 
         //Member Methods (CAN DO)
-        static Array[] GetContestantInformation()
+        public static Contestant GetContestantInformation()
         {
-
-            return 
+            Console.WriteLine("Please enter your information to enter our sweepstakes:\n" +
+               "First Name:\n" +
+               "Last Name:\n" +
+               "Email Address:");
+            return new Contestant { firstName = Console.ReadLine(), lastName = Console.ReadLine(), emailAddress = Console.ReadLine()};
         }
+        public static int GetRandomInteger(int min, int max, Random random)
+        {
+            int randInteger = random.Next(min, max);
+            return randInteger;
+        }
+
 
     }
 }

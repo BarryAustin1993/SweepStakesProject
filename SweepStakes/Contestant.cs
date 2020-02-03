@@ -10,25 +10,22 @@ namespace SweepStakes
     {
 
         //Member   (HAS A)
-        static string[] UserInformation = new string[4];
-        string firstName = UserInformation[1];
-        string lastName = UserInformation[2];
-        string emailAddress = UserInformation[3];
-        string registrationNumber = UserInformation[4];
+        public string firstName;
+        public string lastName;
+        public string emailAddress;
+        public int registrationNumber;
 
         //Constructor
         public Contestant()
         {
-            UserInterface.GetContestant
-
-        }
-        public Contestant(string firstName, string lastName, string emailAddress, string registrationNumber)
-        {
-
+            UserInterface.GetContestantInformation();
         }
 
         //Member Methods (CAN DO)
+        void AssignRegistrationNumber()
+        {
 
+        }
 
     }
 }

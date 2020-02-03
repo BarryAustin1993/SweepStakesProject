@@ -12,6 +12,9 @@ namespace SweepStakes
         //Member Variables (HAS A)
         Dictionary<int, Contestant> contestants;
         string sweepStakesName;
+        int registrationNumber = 0;
+        int winner;
+
         string SweepStakesName
         {
             get
@@ -23,14 +26,23 @@ namespace SweepStakes
         SweepStakes()
         {
 
-
         }
         //Member Methods (CAN DO)
 
-        void registerContestant()
+        void registerContestant(Contestant contestant)
         {
-            Contestant contestant = new Contestant();
-            User
+            registrationNumber++;
+            contestant.registrationNumber = this.registrationNumber;
+            contestants.Add(registrationNumber, contestant);
+        }
+        void ChooseTheWinningContestant()
+        {
+           Random random = new Random();
+           winner = UserInterface.GetRandomInteger(0, registrationNumber + 1, random);
+        }
+        void PrintContestantInfo()
+        {
+
         }
     }
 }

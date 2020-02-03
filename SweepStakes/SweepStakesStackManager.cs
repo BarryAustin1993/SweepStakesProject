@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class MarketingFirm
+    class SweepStakesStackManager
     {
-
-        //Member Variables (HAS A)
-
-        //Constructor
-
-        //Member Methods (CAN DO)
-
-
     }
 }
